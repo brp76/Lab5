@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class Dice {
-	private int random;
+	/*public int random;
 	
 	// Constructor
 	public Dice(){
@@ -12,5 +12,14 @@ public class Dice {
 	// Accessor
 	public int getRoll(){
 		return random;
+	}*/
+	
+	public static int roll(int rollCount, Random r){
+		int randomSum = 0;
+		for (int i = 0; i < rollCount; i++){
+			int roll = r.nextInt(6)+1;
+			randomSum += roll;
+		}
+		return randomSum;
 	}
 }
