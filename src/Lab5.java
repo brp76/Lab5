@@ -2,15 +2,22 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Lab5 {
-	public static int dice1 = 0, dice2 = 0;
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		int runAgain = 0;
 		
-		System.out.println("Number of rolls (100 or 1000)");
-		int rolls = sc.nextInt();
-		
-		Random r = new Random();
-		rollDice(rolls,r);
+		do{
+			System.out.println("Number of rolls (100 or 1000)");
+			int rolls = sc.nextInt();
+			
+			Random r = new Random();
+			rollDice(rolls,r);
+			
+			System.out.println("Continue? (0=NO|1=YES)");
+			runAgain = sc.nextInt();
+			
+		} while (runAgain == 1);
+
 	}
 	
 	public static void rollDice(int n, Random r){
